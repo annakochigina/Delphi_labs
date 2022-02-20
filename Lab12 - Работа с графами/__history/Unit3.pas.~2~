@@ -1,0 +1,51 @@
+unit Unit3;
+
+interface
+uses Vcl.Graphics, System.SysUtils, Unit2, Vcl.Grids;
+type mass = array [1..50,1..50] of integer;
+     TGraph = class
+      private
+        FCountVert : integer;
+        FMatr : mass;
+        FVertlist : array [1..50] of TVertex;
+        FCanvas : TCanvas;
+      public
+        Constructor Create (Canv: TCanvas);
+        procedure AddVertex (x, y : integer);
+        //procedure AddEdge (n1, n2 : integer);
+        //procedure DelVertex (n: integer);
+        //procedure DelEdge (n1, n2 : integer);
+        //procedure DrawGraph;
+        //procedure DrawEdge;
+        procedure OutputMatr (Grid : TStringGrid);
+        //procedure InputMatr (Grid : TStringGrid);
+end;
+implementation
+  Constructor TGraph.Create;
+  begin
+    FCountVert := 0;
+    FCanvas := Canv;
+  end;
+
+procedure TGraph.AddVertex(x, y : integer);
+var i: Integer;
+  begin
+    inc(FCountVert);
+    FVertlist[FCountVert] := TVertex.Create(x, y, FCountVert);
+    for i := 1 to FCountVert do begin
+      FMatr[i, FCountVert] := 0;
+      FMatr[FCountVert, i] := 0;
+    end;
+  end;
+
+procedure TGraph.OutputMatr(Grid: TStringGrid);
+var i, j: Integer;
+  begin
+    Grid.ColCount := FCountVert+1;
+    Grid.RowCount := FCountVert+1;
+    for i := 1 to FCountVert do
+      for j := 1 to FCountVert do
+        Grid.Cells[j,i] := IntToStr(FMatr[i,j]);
+  end;
+
+end.

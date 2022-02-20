@@ -1,0 +1,151 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = #1050#1072#1083#1100#1082#1091#1083#1103#1090#1086#1088
+  ClientHeight = 441
+  ClientWidth = 378
+  Color = clMaroon
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Bt1: TButton
+    Left = 24
+    Top = 144
+    Width = 41
+    Height = 41
+    Caption = '1'
+    TabOrder = 0
+  end
+  object Bt2: TButton
+    Left = 89
+    Top = 144
+    Width = 41
+    Height = 41
+    Caption = '2'
+    TabOrder = 1
+  end
+  object Bt4: TButton
+    Left = 24
+    Top = 203
+    Width = 41
+    Height = 41
+    Caption = '4'
+    TabOrder = 2
+  end
+  object Bt3: TButton
+    Left = 152
+    Top = 144
+    Width = 41
+    Height = 41
+    Caption = '3'
+    TabOrder = 3
+  end
+  object Bt5: TButton
+    Left = 89
+    Top = 203
+    Width = 41
+    Height = 41
+    Caption = '5'
+    TabOrder = 4
+  end
+  object Bt6: TButton
+    Left = 152
+    Top = 203
+    Width = 41
+    Height = 41
+    Caption = '6'
+    TabOrder = 5
+  end
+  object Bt8: TButton
+    Left = 89
+    Top = 264
+    Width = 41
+    Height = 41
+    Caption = '8'
+    TabOrder = 6
+  end
+  object Bt7: TButton
+    Left = 24
+    Top = 264
+    Width = 41
+    Height = 41
+    Caption = '7'
+    TabOrder = 7
+  end
+  object BtPr: TButton
+    Left = 312
+    Top = 203
+    Width = 41
+    Height = 41
+    Caption = '*'
+    TabOrder = 8
+  end
+  object Bt9: TButton
+    Left = 152
+    Top = 264
+    Width = 41
+    Height = 41
+    Caption = '9'
+    TabOrder = 9
+  end
+  object BtPlus: TButton
+    Left = 248
+    Top = 203
+    Width = 41
+    Height = 41
+    Caption = '+'
+    TabOrder = 10
+  end
+  object BtMinus: TButton
+    Left = 248
+    Top = 264
+    Width = 41
+    Height = 41
+    Caption = '-'
+    TabOrder = 11
+  end
+  object BtEq: TButton
+    Left = 89
+    Top = 328
+    Width = 105
+    Height = 41
+    Caption = '='
+    TabOrder = 12
+  end
+  object Bt0: TButton
+    Left = 24
+    Top = 328
+    Width = 41
+    Height = 41
+    Caption = '0'
+    TabOrder = 13
+  end
+  object BtDiv: TButton
+    Left = 312
+    Top = 264
+    Width = 41
+    Height = 41
+    Caption = '/'
+    TabOrder = 14
+  end
+  object BtClear: TButton
+    Left = 248
+    Top = 144
+    Width = 105
+    Height = 41
+    Caption = #1057
+    TabOrder = 15
+  end
+  object Edit: TEdit
+    Left = 24
+    Top = 80
+    Width = 329
+    Height = 41
+    TabOrder = 16
+  end
+end

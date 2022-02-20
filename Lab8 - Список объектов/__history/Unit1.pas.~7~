@@ -1,0 +1,69 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Panel1: TPanel;
+    Start: TButton;
+    Timer1: TTimer;
+    procedure FormCreate(Sender: TObject);
+    procedure StartClick(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  list: Tlist;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  list := TList.Create;
+end;
+
+procedure TForm1.StartClick(Sender: TObject);
+var i: Integer;
+    Obj: TPanel;
+begin
+  Timer1.Enabled := True;
+  for i := 0 to list.Count-1 do begin
+    Obj:=list[i];
+    Obj.Free;
+  end;
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+var Pn: TPanel;
+    k: integer;
+begin
+  Pn := TPanel.Create(Panel1);
+  Pn.Parent:=Panel1;
+  k := random(2);
+  case k of
+    0: begin
+        Pn.Width:= 75;
+        Pn.Height:=150;
+        end;
+    1: begin
+        Pn.Width:= 150;
+        Pn.Height:= 75;
+        end;
+  end;
+  Pn.Left := random(Panel1.Width - Pn.Width);
+  Pn.Top := random(Panel1.Height - Pn.Height);
+  Pn.Color:= random(
+  end;
+
+end.

@@ -1,0 +1,46 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 425
+  ClientWidth = 689
+  Color = clGradientInactiveCaption
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 40
+    Top = 24
+    Width = 465
+    Height = 377
+  end
+  object Button1: TButton
+    Left = 544
+    Top = 40
+    Width = 121
+    Height = 33
+    Caption = 'Add vertex'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 544
+    Top = 104
+    Width = 121
+    Height = 41
+    Caption = #1048#1079#1084#1077#1085#1080#1090#1100' '#1094#1074#1077#1090
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+end

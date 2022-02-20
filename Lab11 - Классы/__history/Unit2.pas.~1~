@@ -1,0 +1,18 @@
+unit Unit2;
+
+interface
+uses classes;
+type TStudent = class
+  private
+    FSurname, FName: string;
+    Fexam, Ftest: array [1..10] of integer;
+    Fcount_exam, Fcount_test: integer;
+  public
+    constructor Create(st: string; e, t: integer);
+    function Output_list: TStringlist;
+    function Avg: real;
+end;
+
+implementation
+
+end.

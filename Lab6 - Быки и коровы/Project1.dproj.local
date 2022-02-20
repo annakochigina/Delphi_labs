@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.759,=C:\Users\2i\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.046,=C:\Users\2i\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.257,C:\Users\2i\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\2i\Desktop\2 курс,группа 2905 Кочигина А.М\Delphi - labs\Быки и коровы\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.257,C:\Users\2i\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\2i\Desktop\2 курс,группа 2905 Кочигина А.М\Delphi - labs\Быки и коровы\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.429,=C:\Users\2i\Desktop\2 курс,группа 2905 Кочигина А.М\Delphi - labs\Быки и коровы\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.599,C:\Users\2i\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\2i\Desktop\2 курс,группа 2905 Кочигина А.М\Delphi - labs\Быки и коровы\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.569,=C:\Users\2i\Desktop\2 курс,группа 2905 Кочигина А.М\Delphi - labs\Быки и коровы\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>

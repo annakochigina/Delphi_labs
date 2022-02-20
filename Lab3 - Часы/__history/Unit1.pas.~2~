@@ -1,0 +1,101 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TMainForm = class(TForm)
+    Timer1: TTimer;
+    StartBt: TButton;
+    ResertBt: TButton;
+    procedure FormPaint(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure StartBtClick(Sender: TObject);
+    procedure ResertBtClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MainForm: TMainForm;
+  r,xc,yc: integer;
+  alf:real;
+implementation
+
+{$R *.dfm}
+
+procedure TMainForm.FormCreate(Sender: TObject);
+var i: Integer;
+begin
+  alf:=pi/2;
+end;
+
+procedure TMainForm.FormPaint(Sender: TObject);
+var i,x1,y1,x2,y2:integer;
+begin
+  if MainForm.ClientWidth > MainForm.ClientHeight then
+    r:= MainForm.ClientHeight div 2
+    else r:=MainForm.ClientWidth div 2;
+  MainForm.Canvas.Ellipse(0,0,2*r,2*r);
+  for i := 1 to 60 do begin
+    x1:=r+round(r*cos((pi/30)*i));
+    y1:=r-round(r*sin((pi/30)*i));
+    x2:=r+round((r-5)*cos((pi/30)*i));
+    y2:=r-round((r-5)*sin((pi/30)*i));
+    MainForm.Canvas.MoveTo(x1,y1);
+    MainForm.Canvas.LineTo(x2,y2);
+
+
+  end;
+  MainForm.Canvas.MoveTo(r,r);
+  xc:=r+round(r*cos(alf));
+  yc:=r-round(r*sin(alf));
+  MainForm.Canvas.LineTo(xc,yc);
+  MainForm.StartBt.Width:=r div 3;
+  MainForm.StartBt.Height:=r div 8;
+  MainForm.StartBt.Left:=0;
+  MainForm.StartBt.Top:=MainForm.ClientHeight-MainForm.StartBt.Height;
+
+  MainForm.ResertBt.Width:=r div 3;
+  MainForm.ResertBt.Height:=r div 8;
+  MainForm.ResertBt.Left:=2*r - r div 2;
+  MainForm.ResertBt.Top:=MainForm.ClientHeight-MainForm.ResertBt.Height;
+end;
+procedure TMainForm.FormResize(Sender: TObject);
+begin
+  repaint;
+end;
+procedure TMainForm.ResertBtClick(Sender: TObject);
+begin
+  alf:=(pi/2);
+  repaint;
+  StartBt.Caption:='Старт';
+  Timer1.Enabled:=false;
+end;
+
+procedure TMainForm.StartBtClick(Sender: TObject);
+begin
+  if StartBt.Caption = 'Старт' then begin
+      StartBt.Caption:='Стоп';
+      Timer1.Enabled:=true;
+  end
+  else begin
+    StartBt.Caption:='Старт';
+    Timer1.Enabled:=false;
+  end;
+end;
+
+procedure TMainForm.Timer1Timer(Sender: TObject);
+begin
+  alf:=alf - pi/30;
+  repaint;
+end;
+
+end.

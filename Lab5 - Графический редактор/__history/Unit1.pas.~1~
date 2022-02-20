@@ -1,0 +1,44 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    BitPencil: TBitBtn;
+    BitLine: TBitBtn;
+    BitRectangle: TBitBtn;
+    BitEllipse: TBitBtn;
+    BitClear: TBitBtn;
+    BitFill: TBitBtn;
+    procedure FormCreate(Sender: TObject);
+    procedure BtClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  BtUsed: integer;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.BtClick(Sender: TObject);
+begin
+  BtUsed:= (Sender As TButton).Tag;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  BtUsed:=0;
+end;
+
+end.

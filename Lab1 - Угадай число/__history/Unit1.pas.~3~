@@ -1,0 +1,49 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TMainForm = class(TForm)
+    InputNum: TEdit;
+    NumLb: TLabel;
+    AnsLb: TLabel;
+    PopLb: TLabel;
+    TimLb: TLabel;
+    Lb: TLabel;
+    Dia1Ed: TEdit;
+    Dia2Ed: TEdit;
+    NewBt: TButton;
+    ReactBt: TButton;
+    procedure NewBtClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MainForm: TMainForm;
+  p,number:integer;
+implementation
+
+{$R *.dfm}
+
+procedure TMainForm.NewBtClick(Sender: TObject);
+var a,b:integer;
+begin
+  ReactBt.Enabled:=true;
+  InputNum.Enabled:=true;
+  Dia1Ed.Enabled:=false;
+  Dia2Ed.Enabled:=false;
+  NewBt.Enabled:=false;
+  a:=StrToInt(Dia1Ed.Text);
+  b:=StrToInt(Dia2Ed.Text);
+  number:=random(b-a+1)+1;
+  p:=0;
+end;
+
+end.

@@ -1,0 +1,50 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  ClientHeight = 517
+  ClientWidth = 629
+  Color = clGradientActiveCaption
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 208
+    Top = 32
+    Width = 184
+    Height = 24
+    Caption = #1048#1075#1088#1072' "'#1053#1072#1081#1076#1080' '#1087#1072#1088#1091'"'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object BtStart: TButton
+    Left = 240
+    Top = 72
+    Width = 121
+    Height = 33
+    Caption = #1057#1090#1072#1088#1090
+    TabOrder = 0
+    OnClick = BtStartClick
+  end
+  object StringGrid1: TStringGrid
+    Left = 104
+    Top = 128
+    Width = 409
+    Height = 313
+    ColCount = 4
+    DefaultColWidth = 100
+    DefaultRowHeight = 100
+    FixedCols = 0
+    RowCount = 3
+    FixedRows = 0
+    TabOrder = 1
+  end
+end

@@ -1,0 +1,47 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.GIFImg, Vcl.ExtCtrls,
+  Vcl.Menus;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    OpenDialog1: TOpenDialog;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    aus51: TMenuItem;
+    bra41: TMenuItem;
+    c421: TMenuItem;
+    dic00251: TMenuItem;
+    dic001: TMenuItem;
+    dic00901: TMenuItem;
+    procedure Image1Click(Sender: TObject);
+    procedure N3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Image1Click(Sender: TObject);
+begin
+  if OpenDialog1.Execute then
+      Image1.Picture.LoadFromFile(OpenDialog1.FileName);
+end;
+
+end.

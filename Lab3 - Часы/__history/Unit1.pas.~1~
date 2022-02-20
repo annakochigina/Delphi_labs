@@ -1,0 +1,38 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TMainForm = class(TForm)
+    procedure FormPaint(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MainForm: TMainForm;
+  r: integer;
+
+implementation
+
+{$R *.dfm}
+
+procedure TMainForm.FormPaint(Sender: TObject);
+begin
+  if MainForm.ClientWidth > MainForm.ClientHeight then
+    r:= MainForm.ClientHeight div 2
+    else r:=MainForm.ClientWidth div 2;
+  MainForm.Canvas.Ellipse(0,0,2*r,2*r);
+end;
+procedure TMainForm.FormResize(Sender: TObject);
+begin
+  repaint;
+end;
+end.

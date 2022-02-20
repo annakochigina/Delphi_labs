@@ -1,0 +1,63 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Grids, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    BtStart: TButton;
+    StringGrid1: TStringGrid;
+    Timer1: TTimer;
+    procedure BtStartClick(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  list : array [0..2,0..3] of integer;
+  n : integer;
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.BtStartClick(Sender: TObject);
+var i, j, k, x: integer;
+begin
+    n := 0;
+    for j := 0 to StringGrid1.ColCount do
+      for i := 0 to StringGrid1.RowCount do begin
+        list[i,j] := 0;
+        inc(n);
+      end;
+    for k := 1 to 2 do
+      for x := 1 to n div 2 do
+        repeat
+          i := random(StringGrid1.RowCount);
+          j := random(StringGrid1.ColCount);
+        until (list[i,j] = 0);
+    list[i,j] := x;
+
+    for j := 0 to StringGrid1.ColCount do
+      for i := 0 to StringGrid1.RowCount do
+        StringGrid1.Cells[j,i] := '1';
+    Timer1.Enabled := True;
+end;
+
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+var j, i : integer;
+begin
+    for j := 0 to StringGrid1.ColCount do
+      for i := 0 to StringGrid1.RowCount do
+        StringGrid1.Cells[j,i] := '0';
+end;
+
+end.

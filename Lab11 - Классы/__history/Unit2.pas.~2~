@@ -1,0 +1,33 @@
+unit Unit2;
+
+interface
+uses classes;
+type TStudent = class
+  private
+    FSurname, FName: string;
+    Fexam, Ftest: array [1..10] of integer;
+    Fcount_exam, Fcount_test: integer;
+  public
+    constructor Create(st: string; e, t: integer);
+    function Output_list: TStringlist;
+    function Avg: real;
+end;
+
+implementation
+  constructor TStudent.Create(st: string; e: Integer; t: Integer);
+  var k, i : integer;
+  begin
+    k := pos(' ', st);
+    FSurname := copy(st, 1, k-1);
+    delete(st,1,k);
+    k := pos(' ', st);
+    FName := copy(st, 1, k-1);
+    delete(st,1,k);
+    for i := 1 to 6 do begin
+      k := pos(' ', st);
+      Fexam[i] := StrToInt(copy(st,1,k-1));
+      delete(st,1,k);
+    end;
+
+  end;
+end.

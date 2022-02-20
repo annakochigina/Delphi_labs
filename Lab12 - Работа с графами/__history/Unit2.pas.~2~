@@ -1,0 +1,30 @@
+unit Unit2;
+
+interface
+uses Vcl.Graphics, System.SysUtils;
+type TVertex = class
+  private
+    Fx, Fy, Fr, Fnumber : integer;
+    FColor : TColor;
+
+  public
+    Constructor Create(x, y, n : integer);
+    procedure Draw (Canv : TCanvas);
+    procedure SetColor (Color : TColor);
+end;
+implementation
+  Constructor TVertex.Create;
+  begin
+    Fx := x;
+    Fy := y;
+    FColor := clHighlight;
+    Fnumber := n;
+  end;
+
+  procedure TVertex.Draw(Canv: TCanvas);
+  begin
+    Canv.Brush.Color := FColor;
+    Canv.Ellipse(Fx-Fr, Fy-Fr,Fx+Fr,Fy+Fr);
+    Canv.TextOut((Fx-Fr)+5, (Fy-Fr)+5,IntToStr(Fnumber));
+  end;
+end.

@@ -1,0 +1,23 @@
+unit Unit2;
+
+interface
+uses Vcl.Graphics;
+type TVertex = class
+  private
+    Fx, Fy, Fr, Fnumber : integer;
+    FColor : TColor;
+
+  public
+    Constuctor Create(x, y, n : integer);
+    procedure Draw (Canv : TCanvas);
+    procedure SetColor (Color : TColor);
+end;
+implementation
+  Constructor TVertex.Create;
+  begin
+    Fx := x;
+    Fy := y;
+    FColor := clHighlight;
+  end;
+
+end.
